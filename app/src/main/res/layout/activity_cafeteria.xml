@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fundo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Topo com a logo e a cor do restaurante -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_topo_cafeteria"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="28dp"
+                android:paddingBottom="24dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <ImageView
+                    android:layout_width="104dp"
+                    android:layout_height="104dp"
+                    android:background="@drawable/bg_logo"
+                    android:elevation="4dp"
+                    android:padding="4dp"
+                    android:src="@drawable/logo_cafeteria"
+                    android:contentDescription="Logo Borcelle Cafeteria" />
+
+                <TextView
+                    style="@style/Texto.TituloGrande"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Borcelle Cafeteria" />
+
+                <TextView
+                    style="@style/Texto.Suave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cafeteria · Cafés, pães e bolos" />
+
+                <TextView
+                    style="@style/Texto.Rotulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_pilula_branca"
+                    android:drawableStart="@drawable/ic_relogio"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:text="Entrega em 30 a 40 min" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    style="@style/Texto.Titulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cardápio"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Café -->
+                <LinearLayout
+                    android:id="@+id/itemCafe"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_cafe"
+                        android:contentDescription="Café" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Café" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Café fresquinho, moído na hora."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 4,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- Cappuccino -->
+                <LinearLayout
+                    android:id="@+id/itemCappuccino"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_cappuccino"
+                        android:contentDescription="Cappuccino" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cappuccino" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Café com leite vaporizado e espuma cremosa."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 9,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- Pão na Chapa -->
+                <LinearLayout
+                    android:id="@+id/itemPaoNaChapa"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_paonachapa"
+                        android:contentDescription="Pão na Chapa" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pão na Chapa" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pão francês tostado na chapa, quentinho e crocante."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 6,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- Bolo (fatia) -->
+                <LinearLayout
+                    android:id="@+id/itemBolo"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_bolo"
+                        android:contentDescription="Bolo (fatia)" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bolo (fatia)" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fatia de bolo caseiro, macio e bem recheado."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 6,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        style="@style/BarraInferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnCarrinho"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver carrinho" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.exemplo.lanchonete">
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Delivery">
+
+        <!-- A abertura é a primeira tela do app (LAUNCHER) e tem fundo laranja -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Delivery.Abertura">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <activity android:name=".HotDogActivity" />
+
+        <activity android:name=".XBurguerActivity" />
+
+        <activity android:name=".PizzaActivity" />
+
+        <activity android:name=".RefrigeranteActivity" />
+
+        <activity android:name=".CoxinhaActivity" />
+
+        <activity android:name=".PastelActivity" />
+
+        <activity android:name=".BatataFritaActivity" />
+
+        <activity android:name=".PaoDeQueijoActivity" />
+
+        <activity android:name=".SucoActivity" />
+
+        <activity android:name=".CarrinhoActivity" />
+
+        <activity android:name=".DadosEntregaActivity" />
+
+        <activity android:name=".ComprovanteActivity" />
+
+        <activity android:name=".AcompanhamentoActivity" />
+
+        <activity android:name=".SobreActivity" />
+
+        <activity android:name=".RestaurantesActivity" />
+
+        <activity android:name=".SorveteriaActivity" />
+
+        <activity android:name=".CafeteriaActivity" />
+
+        <activity android:name=".CasquinhaActivity" />
+
+        <activity android:name=".SundaeActivity" />
+
+        <activity android:name=".AcaiActivity" />
+
+        <activity android:name=".PicoleActivity" />
+
+        <activity android:name=".CafeActivity" />
+
+        <activity android:name=".CappuccinoActivity" />
+
+        <activity android:name=".PaoNaChapaActivity" />
+
+        <activity android:name=".BoloActivity" />
+
+    </application>
+
+</manifest>

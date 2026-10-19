@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cores principais do app -->
+    <color name="primaria">#E85D2A</color>
+    <color name="primaria_escura">#C94A1C</color>
+    <color name="primaria_clara">#FDE7DC</color>
+    <color name="destaque">#FFB627</color>
+    <color name="sucesso">#2E9E5B</color>
+    <color name="sucesso_claro">#E2F4E9</color>
+
+    <!-- Fundos e textos -->
+    <color name="fundo">#FFF8F2</color>
+    <color name="superficie">#FFFFFF</color>
+    <color name="linha">#F1E4D9</color>
+    <color name="texto">#2A1E17</color>
+    <color name="texto_suave">#85766B</color>
+    <color name="branco">#FFFFFF</color>
+
+    <!-- Cor de cada restaurante (usada no topo do cardápio) -->
+    <color name="fundo_lanchonete">#FFE49A</color>
+    <color name="fundo_sorveteria">#FCE3EC</color>
+    <color name="fundo_cafeteria">#EADBCB</color>
+</resources>

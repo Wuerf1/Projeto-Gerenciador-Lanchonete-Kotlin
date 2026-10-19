@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_abertura"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <TextView
+        style="@style/Texto.TituloGrande"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/branco"
+        android:textSize="44sp" />
+
+    <TextView
+        style="@style/Texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:text="Seus favoritos num toque só"
+        android:textColor="#E6FFFFFF"
+        android:textSize="16sp" />
+
+    <!-- Restaurantes parceiros -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/bg_logo"
+            android:padding="3dp"
+            android:src="@drawable/logo_lanchonete"
+            android:contentDescription="Logo Água na Boca" />
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/bg_logo"
+            android:padding="3dp"
+            android:src="@drawable/logo_sorveteria"
+            android:contentDescription="Logo Sorveteria Borcelle" />
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/bg_logo"
+            android:padding="3dp"
+            android:src="@drawable/logo_cafeteria"
+            android:contentDescription="Logo Borcelle Cafeteria" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="40dp"
+        android:indeterminateTint="@color/branco" />
+
+</LinearLayout>

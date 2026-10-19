@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Círculo verde com o "check" do pedido confirmado -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <path
+        android:fillColor="@color/sucesso_claro"
+        android:pathData="M48,0a48,48 0 1,0 0.01,0z" />
+    <path
+        android:fillColor="@color/sucesso"
+        android:pathData="M48,14a34,34 0 1,0 0.01,0z" />
+    <path
+        android:fillColor="@color/branco"
+        android:pathData="M41,58.2L31.8,49l-4.2,4.2L41,66.6l28.4,-28.4 -4.2,-4.2z" />
+</vector>

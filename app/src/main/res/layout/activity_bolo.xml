@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fundo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Foto grande do produto -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/produto_bolo"
+                android:contentDescription="Bolo (fatia)" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    style="@style/Texto.TituloGrande"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bolo (fatia)" />
+
+                <TextView
+                    style="@style/Texto.Suave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fatia de bolo caseiro, macio e bem recheado."
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    style="@style/Texto.Preco"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="a partir de R$ 6,00"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Escolha do sabor (só um) -->
+                <LinearLayout
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Texto.Secao"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Escolha o sabor" />
+
+                        <TextView
+                            style="@style/Etiqueta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Obrigatório" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/Texto.Suave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Escolha 1 opção"
+                        android:layout_marginBottom="4dp" />
+
+                    <RadioGroup
+                        android:id="@+id/rgSabor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/rbSabor0"
+                            style="@style/Opcao"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Cenoura com Chocolate  ·  R$ 8,00" />
+
+                        <RadioButton
+                            android:id="@+id/rbSabor1"
+                            style="@style/Opcao"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Chocolate  ·  R$ 8,00" />
+
+                        <RadioButton
+                            android:id="@+id/rbSabor2"
+                            style="@style/Opcao"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fubá  ·  R$ 6,00" />
+
+                        <RadioButton
+                            android:id="@+id/rbSabor3"
+                            style="@style/Opcao"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Laranja  ·  R$ 7,00" />
+
+                        <RadioButton
+                            android:id="@+id/rbSabor4"
+                            style="@style/Opcao"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Milho  ·  R$ 7,00" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <!-- Adicionais (pode marcar vários) -->
+                <LinearLayout
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Texto.Secao"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Adicionais" />
+
+                        <TextView
+                            style="@style/Etiqueta.Neutra"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Opcional" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/Texto.Suave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Escolha quantos quiser"
+                        android:layout_marginBottom="4dp" />
+
+                    <CheckBox
+                        android:id="@+id/cbCoberturaExtra"
+                        style="@style/Opcao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cobertura Extra  ·  +R$ 1,50" />
+
+                    <CheckBox
+                        android:id="@+id/cbBolaDeSorvete"
+                        style="@style/Opcao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bola de Sorvete  ·  +R$ 4,00" />
+                </LinearLayout>
+
+                <!-- Quantidade -->
+                <LinearLayout
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Texto.Secao"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Quantidade" />
+
+                    <Button
+                        android:id="@+id/btnMenos"
+                        style="@style/Botao.Quantidade"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text="−" />
+
+                    <TextView
+                        android:id="@+id/tvQuantidade"
+                        style="@style/Texto.Titulo"
+                        android:layout_width="52dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="1" />
+
+                    <Button
+                        android:id="@+id/btnMais"
+                        style="@style/Botao.Quantidade"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:text="+" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        style="@style/BarraInferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnVoltar"
+            style="@style/Botao.Secundario"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Voltar" />
+
+        <Button
+            android:id="@+id/btnAdicionarCarrinho"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_marginStart="12dp"
+            android:layout_height="wrap_content"
+            android:text="Adicionar ao carrinho" />
+    </LinearLayout>
+</LinearLayout>

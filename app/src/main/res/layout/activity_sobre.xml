@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fundo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:paddingTop="28dp">
+
+            <TextView
+                style="@style/Texto.Marca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name" />
+
+            <TextView
+                style="@style/Texto.TituloGrande"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Sobre o app" />
+
+            <TextView
+                style="@style/Texto.Suave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="4dp"
+                android:text="Projeto feito por Eduardo Morais do Nascimento, o projeto visa simular um gerenciador de entrega como o ifood." />
+
+            <LinearLayout
+                style="@style/Cartao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Texto.Secao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Como funciona o código" />
+
+                <TextView
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Cada tela do app é uma Activity em Kotlin ligada a um layout em XML. Os botões e os cartões clicáveis usam setOnClickListener, e a troca de telas é feita com Intent e startActivity." />
+
+                <TextView
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Depois da abertura (SplashActivity), a tela de restaurantes mostra a Água na Boca, a Sorveteria Borcelle e a Borcelle Cafeteria. Cada cartão abre a Activity do cardápio daquele restaurante, e cada item do cardápio abre a tela do produto." />
+
+                <TextView
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Cada produto tem uma lista de sabores com o preço de cada um, mostrada em um RadioGroup (só um pode ser escolhido), e adicionais em CheckBox. Ao tocar em Adicionar ao carrinho, o código pega o preço do sabor escolhido, soma os adicionais marcados, monta a descrição e cria um ItemPedido com descrição, quantidade e preço. A quantidade é uma variável que os botões + e − aumentam ou diminuem (mínimo 1 e máximo 10)." />
+
+                <TextView
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Os itens ficam guardados no objeto Carrinho, uma lista compartilhada entre todas as telas enquanto o app está aberto (não usa banco de dados). Ele é o mesmo para os três restaurantes, calcula o total e limpa o pedido no final. Os valores são formatados no padrão brasileiro, com vírgula." />
+
+                <TextView
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="O nome e o endereço da tela de entrega seguem para o comprovante com putExtra e getStringExtra, e o código de 4 dígitos para receber o pedido é sorteado com Random." />
+
+                <TextView
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="A tela de acompanhamento recebe o código do pedido pelo putExtra e simula o andamento da entrega: um Handler troca a etapa a cada 5 segundos (recebido, em preparo, saiu para entrega e entregue) e a ProgressBar avança junto. Se o usuário sair da tela, as trocas agendadas são canceladas no onDestroy. A abertura usa um Handler do mesmo jeito, por 2 segundos, e chama finish() para não aparecer de novo ao apertar voltar." />
+
+                <TextView
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="O visual usa o tema do Material Components, que já vem no projeto. As cores ficam em colors.xml, os estilos de textos, botões e cartões em styles.xml e themes.xml, e os cantos arredondados, os cartões e a barra de progresso são formas (shape) em XML na pasta drawable. Todas as fotos e logos ficam dentro do app, na pasta drawable-nodpi, então ele funciona sem internet." />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Cartao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Texto.Secao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Como funciona para o usuário" />
+
+                <TextView
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="O app começa com uma tela de abertura com os restaurantes parceiros e, depois de alguns segundos, mostra a tela de restaurantes sozinho." />
+
+                <TextView
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Ao escolher um restaurante, o usuário vê o cardápio com foto, descrição e preço inicial de cada item: a Água na Boca tem 9 opções, e a Sorveteria Borcelle e a Borcelle Cafeteria têm 4 cada. Na tela do produto, ele escolhe o sabor, os adicionais e a quantidade e toca em Adicionar ao carrinho. O item é guardado e ele volta ao cardápio para pedir mais coisas, inclusive de outro restaurante." />
+
+                <TextView
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Em Ver carrinho, ele confere todos os itens e o total do pedido. Ao tocar em Finalizar pedido, informa o nome e o endereço de entrega (os dois são obrigatórios). O app mostra o comprovante com o resumo do pedido e um código de 4 dígitos para receber a entrega. Em Acompanhar pedido, ele vê o pedido passar pelas etapas até ser entregue, e Fazer novo pedido volta para a tela de restaurantes." />
+            </LinearLayout>
+
+            <TextView
+                style="@style/Texto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="E se baseia nisso o projeto." />
+
+            <TextView
+                style="@style/Texto.Titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Obrigado!"
+                android:textColor="@color/primaria" />
+
+            <TextView
+                style="@style/Texto.Suave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Versão 1.0"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        style="@style/BarraInferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnVoltar"
+            style="@style/Botao.Secundario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Voltar" />
+    </LinearLayout>
+</LinearLayout>

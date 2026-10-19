@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fundo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:paddingTop="28dp">
+
+            <TextView
+                style="@style/Texto.TituloGrande"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seu carrinho" />
+
+            <TextView
+                style="@style/Texto.Suave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="20dp"
+                android:text="Confira os itens antes de finalizar." />
+
+            <!-- Aparece só quando o carrinho está vazio -->
+            <TextView
+                android:id="@+id/tvVazio"
+                style="@style/Cartao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_carrinho"
+                android:drawablePadding="12dp"
+                android:gravity="center"
+                android:padding="32dp"
+                android:text="Seu carrinho está vazio.\nEscolha um restaurante e adicione seus favoritos!"
+                android:textColor="@color/texto_suave"
+                android:textSize="15sp" />
+
+            <!-- Lista dos itens (preenchida pelo código) -->
+            <TextView
+                android:id="@+id/tvItens"
+                style="@style/Cartao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="10dp"
+                android:textColor="@color/texto"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_cartao_destaque"
+                android:fontFamily="sans-serif-black"
+                android:padding="18dp"
+                android:textColor="@color/primaria_escura"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        style="@style/BarraInferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnFinalizarPedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Finalizar pedido" />
+
+        <Button
+            android:id="@+id/btnContinuarComprando"
+            style="@style/Botao.Secundario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continuar comprando"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fundo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:paddingTop="28dp">
+
+            <TextView
+                style="@style/Texto.TituloGrande"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Acompanhe seu pedido" />
+
+            <TextView
+                android:id="@+id/tvCodigo"
+                style="@style/Texto.Suave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Status atual com barra de progresso -->
+            <LinearLayout
+                style="@style/Cartao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    style="@style/Texto.Suave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status atual"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    style="@style/Texto.TituloGrande"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primaria"
+                    android:textSize="26sp" />
+
+                <ProgressBar
+                    android:id="@+id/pbProgresso"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="16dp"
+                    android:minHeight="10dp"
+                    android:maxHeight="10dp"
+                    android:progressDrawable="@drawable/barra_progresso" />
+            </LinearLayout>
+
+            <!-- Etapas do pedido (preenchidas pelo código) -->
+            <LinearLayout
+                style="@style/Cartao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/tvEtapa0"
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvEtapa1"
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvEtapa2"
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvEtapa3"
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/Texto.Rotulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_etiqueta"
+                android:drawableStart="@drawable/ic_relogio"
+                android:drawablePadding="6dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="Tempo estimado: 30 a 40 minutos"
+                android:textColor="@color/primaria_escura" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        style="@style/BarraInferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnNovoPedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fazer novo pedido" />
+    </LinearLayout>
+</LinearLayout>

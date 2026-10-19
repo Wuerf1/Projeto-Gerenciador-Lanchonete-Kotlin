@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fundo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Topo com a logo e a cor do restaurante -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_topo_sorveteria"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="28dp"
+                android:paddingBottom="24dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <ImageView
+                    android:layout_width="104dp"
+                    android:layout_height="104dp"
+                    android:background="@drawable/bg_logo"
+                    android:elevation="4dp"
+                    android:padding="4dp"
+                    android:src="@drawable/logo_sorveteria"
+                    android:contentDescription="Logo Sorveteria Borcelle" />
+
+                <TextView
+                    style="@style/Texto.TituloGrande"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Sorveteria Borcelle" />
+
+                <TextView
+                    style="@style/Texto.Suave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sorveteria · Sorvetes, açaí e picolés" />
+
+                <TextView
+                    style="@style/Texto.Rotulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_pilula_branca"
+                    android:drawableStart="@drawable/ic_relogio"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:text="Entrega em 30 a 40 min" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    style="@style/Texto.Titulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cardápio"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Casquinha -->
+                <LinearLayout
+                    android:id="@+id/itemCasquinha"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_casquinha"
+                        android:contentDescription="Casquinha" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Casquinha" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sorvete artesanal na casquinha crocante."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 5,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- Sundae -->
+                <LinearLayout
+                    android:id="@+id/itemSundae"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_sundae"
+                        android:contentDescription="Sundae" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sundae" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Taça de sorvete com calda, chantilly e confeitos."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 12,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- Açaí (300 ml) -->
+                <LinearLayout
+                    android:id="@+id/itemAcai"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_acai"
+                        android:contentDescription="Açaí (300 ml)" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Açaí (300 ml)" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Açaí cremoso no copo de 300 ml, montado do seu jeito."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 14,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- Picolé -->
+                <LinearLayout
+                    android:id="@+id/itemPicole"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_picole"
+                        android:contentDescription="Picolé" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Picolé" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Picolé de fruta ou cremoso, perfeito para o calor."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 4,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        style="@style/BarraInferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnCarrinho"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver carrinho" />
+    </LinearLayout>
+</LinearLayout>

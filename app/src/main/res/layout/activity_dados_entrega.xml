@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fundo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:paddingTop="28dp">
+
+            <TextView
+                style="@style/Texto.TituloGrande"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dados para entrega" />
+
+            <TextView
+                style="@style/Texto.Suave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="20dp"
+                android:text="Para onde vamos levar o seu pedido?" />
+
+            <LinearLayout
+                style="@style/Cartao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Texto.Rotulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Nome completo" />
+
+                <EditText
+                    android:id="@+id/etNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="54dp"
+                    android:background="@drawable/bg_campo"
+                    android:drawableStart="@drawable/ic_pessoa"
+                    android:drawablePadding="10dp"
+                    android:hint="Como podemos te chamar?"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName|textCapWords"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:textColor="@color/texto"
+                    android:textColorHint="@color/texto_suave"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="@style/Texto.Rotulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Endereço de entrega" />
+
+                <EditText
+                    android:id="@+id/etEndereco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="54dp"
+                    android:background="@drawable/bg_campo"
+                    android:drawableStart="@drawable/ic_local"
+                    android:drawablePadding="10dp"
+                    android:hint="Rua, número e bairro"
+                    android:importantForAutofill="no"
+                    android:inputType="textPostalAddress|textCapSentences"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:textColor="@color/texto"
+                    android:textColorHint="@color/texto_suave"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        style="@style/BarraInferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnVoltar"
+            style="@style/Botao.Secundario"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Voltar" />
+
+        <Button
+            android:id="@+id/btnConfirmarEntrega"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_marginStart="12dp"
+            android:layout_height="wrap_content"
+            android:text="Confirmar pedido" />
+    </LinearLayout>
+</LinearLayout>

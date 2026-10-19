@@ -1,0 +1,4 @@
+<resources>
+    <!-- Nome do app: aparece no ícone, na abertura e no topo da tela inicial -->
+    <string name="app_name">Bateu Fome</string>
+</resources>

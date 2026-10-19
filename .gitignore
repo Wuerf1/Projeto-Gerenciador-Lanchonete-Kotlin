@@ -1,0 +1,11 @@
+# Arquivos gerados pelo Android Studio e pelo Gradle (não vão para o Git)
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/app/build/
+/captures/
+.externalNativeBuild/
+.cxx/

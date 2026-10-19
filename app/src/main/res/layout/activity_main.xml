@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fundo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Topo com a logo e a cor do restaurante -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_topo_lanchonete"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="28dp"
+                android:paddingBottom="24dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <ImageView
+                    android:layout_width="104dp"
+                    android:layout_height="104dp"
+                    android:background="@drawable/bg_logo"
+                    android:elevation="4dp"
+                    android:padding="4dp"
+                    android:src="@drawable/logo_lanchonete"
+                    android:contentDescription="Logo Água na Boca" />
+
+                <TextView
+                    style="@style/Texto.TituloGrande"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Água na Boca" />
+
+                <TextView
+                    style="@style/Texto.Suave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lanchonete · Lanches, salgados e bebidas" />
+
+                <TextView
+                    style="@style/Texto.Rotulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_pilula_branca"
+                    android:drawableStart="@drawable/ic_relogio"
+                    android:drawablePadding="6dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:text="Entrega em 30 a 40 min" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    style="@style/Texto.Titulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cardápio"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Hot Dog -->
+                <LinearLayout
+                    android:id="@+id/itemHotDog"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_hotdog"
+                        android:contentDescription="Hot Dog" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hot Dog" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pão macio, salsicha e molho da casa, prensado na chapa."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 8,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- X-Burguer -->
+                <LinearLayout
+                    android:id="@+id/itemXBurguer"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_xburguer"
+                        android:contentDescription="X-Burguer" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="X-Burguer" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hambúrguer artesanal no pão brioche, com queijo derretido."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 12,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- Pizza (fatia) -->
+                <LinearLayout
+                    android:id="@+id/itemPizza"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_pizza"
+                        android:contentDescription="Pizza (fatia)" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pizza (fatia)" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fatia generosa de massa fina, saindo do forno."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 9,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- Refrigerante -->
+                <LinearLayout
+                    android:id="@+id/itemRefrigerante"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_refrigerante"
+                        android:contentDescription="Refrigerante" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Refrigerante" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lata gelada de 350 ml para acompanhar o lanche."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 5,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- Coxinha -->
+                <LinearLayout
+                    android:id="@+id/itemCoxinha"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_coxinha"
+                        android:contentDescription="Coxinha" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Coxinha" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Massa crocante por fora e recheio cremoso por dentro."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 6,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- Pastel -->
+                <LinearLayout
+                    android:id="@+id/itemPastel"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_pastel"
+                        android:contentDescription="Pastel" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pastel" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Massa sequinha e crocante, com recheio caprichado."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 7,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- Batata Frita -->
+                <LinearLayout
+                    android:id="@+id/itemBatataFrita"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_batatafrita"
+                        android:contentDescription="Batata Frita" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Batata Frita" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Porção crocante, servida com ketchup e maionese."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 10,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- Pão de Queijo -->
+                <LinearLayout
+                    android:id="@+id/itemPaoDeQueijo"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_paodequeijo"
+                        android:contentDescription="Pão de Queijo" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pão de Queijo" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Porção de pão de queijo quentinho, saído do forno."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 6,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- Suco -->
+                <LinearLayout
+                    android:id="@+id/itemSuco"
+                    style="@style/Cartao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        android:src="@drawable/miniatura_suco"
+                        android:contentDescription="Suco" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Texto.NomeItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Suco" />
+
+                        <TextView
+                            style="@style/Texto.Suave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Suco natural feito na hora, sem conservantes."
+                            android:layout_marginTop="2dp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            style="@style/Texto.Preco"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a partir de R$ 6,00"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_seta"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        style="@style/BarraInferior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnCarrinho"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver carrinho" />
+    </LinearLayout>
+</LinearLayout>

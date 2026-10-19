@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Trilho -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp" />
+            <solid android:color="@color/primaria_clara" />
+        </shape>
+    </item>
+    <!-- Parte preenchida -->
+    <item android:id="@android:id/progress">
+        <scale android:scaleWidth="100%">
+            <shape android:shape="rectangle">
+                <corners android:radius="10dp" />
+                <solid android:color="@color/primaria" />
+            </shape>
+        </scale>
+    </item>
+</layer-list>

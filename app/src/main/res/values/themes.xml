@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Tema do app inteiro. Usa o Material Components (já incluído no build.gradle).
+         NoActionBar: cada tela desenha o seu próprio topo. -->
+    <style name="Theme.Delivery" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaria</item>
+        <item name="colorPrimaryVariant">@color/primaria_escura</item>
+        <item name="colorOnPrimary">@color/branco</item>
+        <item name="colorSecondary">@color/primaria</item>
+        <item name="colorSecondaryVariant">@color/primaria_escura</item>
+        <item name="colorOnSecondary">@color/branco</item>
+        <item name="colorAccent">@color/primaria</item>
+        <item name="colorControlActivated">@color/primaria</item>
+        <item name="android:colorBackground">@color/fundo</item>
+        <item name="android:windowBackground">@color/fundo</item>
+        <item name="android:textColorPrimary">@color/texto</item>
+        <item name="android:textColorSecondary">@color/texto_suave</item>
+        <item name="android:statusBarColor">@color/fundo</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <!-- Todo botão do app usa o estilo principal, a não ser que a tela diga outro -->
+        <item name="materialButtonStyle">@style/Botao.Principal</item>
+    </style>
+
+    <!-- Tema da abertura: fundo laranja do começo ao fim -->
+    <style name="Theme.Delivery.Abertura">
+        <item name="android:windowBackground">@color/primaria</item>
+        <item name="android:statusBarColor">@color/primaria</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/primaria</item>
+    </style>
+</resources>
