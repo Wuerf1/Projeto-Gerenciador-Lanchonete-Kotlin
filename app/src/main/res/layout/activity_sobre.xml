@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/fundo">
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -74,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:lineSpacingExtra="4dp"
-                    android:text="Cada produto tem uma lista de sabores com o preço de cada um, mostrada em um RadioGroup (só um pode ser escolhido), e adicionais em CheckBox. Ao tocar em Adicionar ao carrinho, o código pega o preço do sabor escolhido, soma os adicionais marcados, monta a descrição e cria um ItemPedido com descrição, quantidade e preço. A quantidade é uma variável que os botões + e − aumentam ou diminuem (mínimo 1 e máximo 10)." />
+                    android:text="Cada produto tem uma lista de sabores com o preço de cada um, mostrada em um RadioGroup (só um pode ser escolhido), e adicionais em CheckBox. Ao tocar em Adicionar ao carrinho, o código pega o preço do sabor escolhido, soma os adicionais marcados, monta a descrição e cria um ItemPedido com descrição, quantidade e preço. A quantidade é uma variável que os botões + e − aumentam ou diminuem (mínimo 1 e máximo 10). Cada mudança de sabor, adicional ou quantidade chama a função atualizarValor(), que mostra no próprio botão quanto o item vai custar. A quantidade é guardada no onSaveInstanceState, para não voltar a 1 se o celular for girado." />
 
                 <TextView
                     style="@style/Texto"
@@ -82,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:lineSpacingExtra="4dp"
-                    android:text="Os itens ficam guardados no objeto Carrinho, uma lista compartilhada entre todas as telas enquanto o app está aberto (não usa banco de dados). Ele é o mesmo para os três restaurantes, calcula o total e limpa o pedido no final. Os valores são formatados no padrão brasileiro, com vírgula." />
+                    android:text="Os itens ficam guardados no objeto Carrinho, uma lista compartilhada entre todas as telas enquanto o app está aberto (não usa banco de dados). Ele é o mesmo para os três restaurantes, calcula o total e limpa o pedido no final. Os valores são formatados no padrão brasileiro, com vírgula. Os cardápios atualizam o botão do carrinho no onResume, que roda sempre que a tela volta a aparecer, mostrando quantos itens já foram escolhidos e o total. Na tela do carrinho, um AlertDialog lista os itens para remover um deles ou esvaziar tudo." />
 
                 <TextView
                     style="@style/Texto"
@@ -90,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:lineSpacingExtra="4dp"
-                    android:text="O nome e o endereço da tela de entrega seguem para o comprovante com putExtra e getStringExtra, e o código de 4 dígitos para receber o pedido é sorteado com Random." />
+                    android:text="O nome, o endereço, a forma de pagamento (um RadioGroup) e o resumo dos itens seguem da tela de entrega para o comprovante com putExtra, e o código de 4 dígitos para receber o pedido é sorteado com Random. O carrinho é limpo na confirmação e a tela de entrega chama finish(), assim não dá para confirmar o mesmo pedido de novo apertando voltar." />
 
                 <TextView
                     style="@style/Texto"
@@ -98,7 +97,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:lineSpacingExtra="4dp"
-                    android:text="A tela de acompanhamento recebe o código do pedido pelo putExtra e simula o andamento da entrega: um Handler troca a etapa a cada 5 segundos (recebido, em preparo, saiu para entrega e entregue) e a ProgressBar avança junto. Se o usuário sair da tela, as trocas agendadas são canceladas no onDestroy. A abertura usa um Handler do mesmo jeito, por 2 segundos, e chama finish() para não aparecer de novo ao apertar voltar." />
+                    android:text="A tela de acompanhamento recebe o código do pedido pelo putExtra e simula o andamento da entrega: um Handler troca a etapa a cada 5 segundos (recebido, em preparo, saiu para entrega e entregue) e a ProgressBar avança junto. A etapa atual também é guardada no onSaveInstanceState. Se o usuário sair da tela, as trocas agendadas são canceladas no onDestroy. A abertura usa um Handler do mesmo jeito, por 2 segundos, e chama finish() para não aparecer de novo ao apertar voltar." />
 
                 <TextView
                     style="@style/Texto"
@@ -136,7 +135,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:lineSpacingExtra="4dp"
-                    android:text="Ao escolher um restaurante, o usuário vê o cardápio com foto, descrição e preço inicial de cada item: a Água na Boca tem 9 opções, e a Sorveteria Borcelle e a Borcelle Cafeteria têm 4 cada. Na tela do produto, ele escolhe o sabor, os adicionais e a quantidade e toca em Adicionar ao carrinho. O item é guardado e ele volta ao cardápio para pedir mais coisas, inclusive de outro restaurante." />
+                    android:text="Ao escolher um restaurante, o usuário vê o cardápio com foto, descrição e preço inicial de cada item: a Água na Boca tem 9 opções, e a Sorveteria Borcelle e a Borcelle Cafeteria têm 4 cada. Na tela do produto, ele escolhe o sabor, os adicionais e a quantidade e já vê o valor no botão Adicionar ao carrinho. O item é guardado e ele volta ao cardápio para pedir mais coisas, inclusive de outro restaurante." />
 
                 <TextView
                     style="@style/Texto"
@@ -144,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:lineSpacingExtra="4dp"
-                    android:text="Em Ver carrinho, ele confere todos os itens e o total do pedido. Ao tocar em Finalizar pedido, informa o nome e o endereço de entrega (os dois são obrigatórios). O app mostra o comprovante com o resumo do pedido e um código de 4 dígitos para receber a entrega. Em Acompanhar pedido, ele vê o pedido passar pelas etapas até ser entregue, e Fazer novo pedido volta para a tela de restaurantes." />
+                    android:text="Em Ver carrinho, ele confere todos os itens e o total do pedido, e pode remover o que não quiser mais. Ao tocar em Finalizar pedido, informa o nome e o endereço de entrega (os dois são obrigatórios) e escolhe se vai pagar com Pix, cartão ou dinheiro na entrega. O app mostra o comprovante com o resumo do pedido e um código de 4 dígitos para receber a entrega. Em Acompanhar pedido, ele vê o pedido passar pelas etapas até ser entregue, e Fazer novo pedido volta para a tela de restaurantes." />
             </LinearLayout>
 
             <TextView
@@ -170,7 +169,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:text="Versão 1.0"
+                android:text="Versão 1.1"
                 android:textStyle="italic" />
         </LinearLayout>
 

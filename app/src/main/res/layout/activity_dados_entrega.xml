@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/fundo">
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -86,6 +85,70 @@
                     android:textColor="@color/texto"
                     android:textColorHint="@color/texto_suave"
                     android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Forma de pagamento (só uma) -->
+            <LinearLayout
+                style="@style/Cartao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Texto.Secao"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Forma de pagamento" />
+
+                    <TextView
+                        style="@style/Etiqueta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Obrigatório" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Texto.Suave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="O pagamento é feito na entrega" />
+
+                <RadioGroup
+                    android:id="@+id/rgPagamento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rbPix"
+                        style="@style/Opcao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Pix" />
+
+                    <RadioButton
+                        android:id="@+id/rbCartao"
+                        style="@style/Opcao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cartão de crédito ou débito" />
+
+                    <RadioButton
+                        android:id="@+id/rbDinheiro"
+                        style="@style/Opcao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dinheiro" />
+                </RadioGroup>
             </LinearLayout>
         </LinearLayout>
 

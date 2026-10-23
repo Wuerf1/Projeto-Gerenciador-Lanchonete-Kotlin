@@ -21,27 +21,48 @@ class SucoActivity : AppCompatActivity() {
     )
     private val quantidadeMaxima = 10
 
+    // Quantidade escolhida pelo cliente (começa em 1). Fica fora do onCreate
+    // para poder ser guardada quando a tela gira (veja onSaveInstanceState)
+    private var quantidade = 1
+
+    // Componentes usados também nas funções montarItem() e atualizarValor()
+    private lateinit var cbCopoGrande: CheckBox
+    private lateinit var cbMel: CheckBox
+    private lateinit var cbHortela: CheckBox
+    private lateinit var rgSabor: RadioGroup
+    private lateinit var btnAdicionarCarrinho: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_suco)
 
-        val cbCopoGrande = findViewById<CheckBox>(R.id.cbCopoGrande)
-        val cbMel = findViewById<CheckBox>(R.id.cbMel)
-        val cbHortela = findViewById<CheckBox>(R.id.cbHortela)
-        val rgSabor = findViewById<RadioGroup>(R.id.rgSabor)
-        val btnAdicionarCarrinho = findViewById<Button>(R.id.btnAdicionarCarrinho)
+        cbCopoGrande = findViewById(R.id.cbCopoGrande)
+        cbMel = findViewById(R.id.cbMel)
+        cbHortela = findViewById(R.id.cbHortela)
+        rgSabor = findViewById(R.id.rgSabor)
+        btnAdicionarCarrinho = findViewById(R.id.btnAdicionarCarrinho)
         val btnVoltar = findViewById<Button>(R.id.btnVoltar)
         val tvQuantidade = findViewById<TextView>(R.id.tvQuantidade)
         val btnMenos = findViewById<Button>(R.id.btnMenos)
         val btnMais = findViewById<Button>(R.id.btnMais)
 
-        // Quantidade escolhida pelo cliente (começa em 1)
-        var quantidade = 1
+        // Se a tela girou, recupera a quantidade que o cliente já tinha escolhido
+        if (savedInstanceState != null) {
+            quantidade = savedInstanceState.getInt("QUANTIDADE", 1)
+            tvQuantidade.text = quantidade.toString()
+        }
+
+        // Sempre que o cliente troca a opção ou marca um adicional, o valor do botão é refeito
+        cbCopoGrande.setOnCheckedChangeListener { _, _ -> atualizarValor() }
+        cbMel.setOnCheckedChangeListener { _, _ -> atualizarValor() }
+        cbHortela.setOnCheckedChangeListener { _, _ -> atualizarValor() }
+        rgSabor.setOnCheckedChangeListener { _, _ -> atualizarValor() }
 
         btnMais.setOnClickListener {
             if (quantidade < quantidadeMaxima) {
                 quantidade++
                 tvQuantidade.text = quantidade.toString()
+                atualizarValor()
             } else {
                 Toast.makeText(this, "Máximo de $quantidadeMaxima unidades por item", Toast.LENGTH_SHORT).show()
             }
@@ -51,32 +72,12 @@ class SucoActivity : AppCompatActivity() {
             if (quantidade > 1) {
                 quantidade--
                 tvQuantidade.text = quantidade.toString()
+                atualizarValor()
             }
         }
 
         btnAdicionarCarrinho.setOnClickListener {
-            // Sabor escolhido (posição no grupo) e o preço dele
-            val marcado = rgSabor.findViewById<RadioButton>(rgSabor.checkedRadioButtonId)
-            val (nomeSabor, precoSabor) = listaSabores[rgSabor.indexOfChild(marcado)]
-            var preco = precoSabor
-            val adicionais = StringBuilder()
-            adicionais.append(", Sabor $nomeSabor")
-
-            if (cbCopoGrande.isChecked) {
-                preco += 2.00
-                adicionais.append(", Copo Grande")
-            }
-            if (cbMel.isChecked) {
-                preco += 1.00
-                adicionais.append(", Adoçado com Mel")
-            }
-            if (cbHortela.isChecked) {
-                preco += 0.50
-                adicionais.append(", Com Hortelã")
-            }
-
-            val descricao = "Suco" + adicionais.toString()
-            Carrinho.adicionar(ItemPedido(descricao, quantidade, preco))
+            Carrinho.adicionar(montarItem())
 
             Toast.makeText(this, "Suco adicionado ao carrinho!", Toast.LENGTH_SHORT).show()
             finish()
@@ -85,5 +86,50 @@ class SucoActivity : AppCompatActivity() {
         btnVoltar.setOnClickListener {
             finish()
         }
+
+        // Mostra o valor inicial no botão
+        atualizarValor()
+    }
+
+    // Monta o item com a opção escolhida, os adicionais marcados e a quantidade.
+    // É usado tanto para mostrar o valor no botão quanto para guardar no carrinho.
+    private fun montarItem(): ItemPedido {
+        // Sabor escolhido (posição no grupo) e o preço dele
+        val marcado = rgSabor.findViewById<RadioButton>(rgSabor.checkedRadioButtonId)
+        val (nomeSabor, precoSabor) = listaSabores[rgSabor.indexOfChild(marcado)]
+        var preco = precoSabor
+        val adicionais = StringBuilder()
+        adicionais.append(", Sabor $nomeSabor")
+
+        if (cbCopoGrande.isChecked) {
+            preco += 2.00
+            adicionais.append(", Copo Grande")
+        }
+        if (cbMel.isChecked) {
+            preco += 1.00
+            adicionais.append(", Adoçado com Mel")
+        }
+        if (cbHortela.isChecked) {
+            preco += 0.50
+            adicionais.append(", Com Hortelã")
+        }
+
+        val descricao = "Suco" + adicionais.toString()
+        return ItemPedido(descricao, quantidade, preco)
+    }
+
+    // Mostra no botão quanto o pedido deste item vai custar (preço x quantidade)
+    private fun atualizarValor() {
+        // Enquanto a tela é recriada, pode não haver opção marcada ainda
+        if (rgSabor.checkedRadioButtonId == -1) {
+            return
+        }
+        btnAdicionarCarrinho.text = "Adicionar · R$ " + Carrinho.formatarPreco(montarItem().subtotal())
+    }
+
+    // Guarda a quantidade antes de a tela ser recriada (por exemplo, ao girar o celular)
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("QUANTIDADE", quantidade)
     }
 }

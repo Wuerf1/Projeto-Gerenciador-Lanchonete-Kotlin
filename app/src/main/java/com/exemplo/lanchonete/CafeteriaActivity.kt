@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 // Cardápio da Borcelle Cafeteria: funciona igual ao cardápio da lanchonete (MainActivity)
 class CafeteriaActivity : AppCompatActivity() {
 
+    // Botão do carrinho: o texto dele muda conforme os itens escolhidos
+    private lateinit var btnCarrinho: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cafeteria)
@@ -18,7 +21,7 @@ class CafeteriaActivity : AppCompatActivity() {
         val itemCappuccino = findViewById<LinearLayout>(R.id.itemCappuccino)
         val itemPaoNaChapa = findViewById<LinearLayout>(R.id.itemPaoNaChapa)
         val itemBolo = findViewById<LinearLayout>(R.id.itemBolo)
-        val btnCarrinho = findViewById<Button>(R.id.btnCarrinho)
+        btnCarrinho = findViewById(R.id.btnCarrinho)
 
         // Cada produto abre sua própria tela de opções e adicionais
         itemCafe.setOnClickListener {
@@ -40,5 +43,12 @@ class CafeteriaActivity : AppCompatActivity() {
         btnCarrinho.setOnClickListener {
             startActivity(Intent(this, CarrinhoActivity::class.java))
         }
+    }
+
+    // O onResume roda toda vez que a tela aparece (também ao voltar de um produto),
+    // então o botão sempre mostra a quantidade de itens e o total atualizados
+    override fun onResume() {
+        super.onResume()
+        btnCarrinho.text = Carrinho.textoDoBotao()
     }
 }

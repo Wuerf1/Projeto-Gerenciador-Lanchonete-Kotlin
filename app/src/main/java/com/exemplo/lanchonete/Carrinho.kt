@@ -25,12 +25,46 @@ object Carrinho {
         itens.add(item)
     }
 
+    // Tira do carrinho o item que está na posição informada (0 = primeiro)
+    fun remover(posicao: Int) {
+        itens.removeAt(posicao)
+    }
+
     fun total(): Double {
         var soma = 0.0
         for (item in itens) {
             soma += item.subtotal()
         }
         return soma
+    }
+
+    // Soma as quantidades (2 Hot Dogs + 1 Suco = 3 itens)
+    fun quantidadeDeItens(): Int {
+        var soma = 0
+        for (item in itens) {
+            soma += item.quantidade
+        }
+        return soma
+    }
+
+    // Texto do botão "Ver carrinho" dos cardápios: mostra quantos itens
+    // já foram escolhidos e o total, para o cliente não precisar abrir o carrinho
+    fun textoDoBotao(): String {
+        val quantidade = quantidadeDeItens()
+        if (quantidade == 0) {
+            return "Ver carrinho"
+        }
+        val palavra = if (quantidade == 1) "item" else "itens"
+        return "Carrinho · $quantidade $palavra · R$ " + formatarPreco(total())
+    }
+
+    // Versão curta, para botões estreitos (ex.: "Ver carrinho (3)")
+    fun textoCurtoDoBotao(): String {
+        val quantidade = quantidadeDeItens()
+        if (quantidade == 0) {
+            return "Ver carrinho"
+        }
+        return "Ver carrinho ($quantidade)"
     }
 
     // Monta um texto com todos os itens, um por linha.
@@ -41,10 +75,17 @@ object Carrinho {
             if (texto.isNotEmpty()) {
                 texto.append("\n")
             }
-            texto.append("• " + item.quantidade + "x " + item.descricao +
-                    " - R$ " + formatarPreco(item.subtotal()))
+            texto.append("• " + textoDoItem(item))
         }
         return texto.toString()
+    }
+
+    // Uma linha só, por exemplo: "2x Hot Dog, Sabor Frango - R$ 18,00".
+    // O   é um espaço que não quebra a linha: assim o "R$" nunca fica
+    // separado do valor quando o texto não cabe em uma linha só.
+    fun textoDoItem(item: ItemPedido): String {
+        return item.quantidade.toString() + "x " + item.descricao +
+                " - R$ " + formatarPreco(item.subtotal())
     }
 
     // Formata um valor com vírgula, no padrão brasileiro (ex.: 8,50),

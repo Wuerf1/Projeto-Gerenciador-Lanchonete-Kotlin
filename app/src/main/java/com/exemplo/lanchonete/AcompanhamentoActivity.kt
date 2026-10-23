@@ -50,9 +50,16 @@ class AcompanhamentoActivity : AppCompatActivity() {
         val codigo = intent.getIntExtra("CODIGO", 0)
         tvCodigo.text = "Código de entrega: $codigo"
 
+        // Se a tela girou, continua da etapa em que estava (em vez de voltar ao começo)
+        if (savedInstanceState != null) {
+            etapaAtual = savedInstanceState.getInt("ETAPA", 0)
+        }
+
         progresso.max = etapas.size - 1
         mostrarEtapa()
-        agendarProximaEtapa()
+        if (etapaAtual < etapas.size - 1) {
+            agendarProximaEtapa()
+        }
 
         btnNovoPedido.setOnClickListener {
             // CLEAR_TOP volta para a tela de restaurantes que já está aberta e fecha
@@ -85,6 +92,12 @@ class AcompanhamentoActivity : AppCompatActivity() {
             val bolinha = if (i <= etapaAtual) "●" else "○"
             linhasEtapas[i].text = bolinha + "  " + etapas[i]
         }
+    }
+
+    // Guarda a etapa antes de a tela ser recriada (por exemplo, ao girar o celular)
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("ETAPA", etapaAtual)
     }
 
     // Se o usuário sair da tela, cancela as trocas de etapa que ainda estavam agendadas

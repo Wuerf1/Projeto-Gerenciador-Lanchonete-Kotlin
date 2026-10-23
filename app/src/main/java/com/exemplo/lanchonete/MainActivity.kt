@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 // Cardápio da lanchonete Água na Boca
 class MainActivity : AppCompatActivity() {
 
+    // Botão do carrinho: o texto dele muda conforme os itens escolhidos
+    private lateinit var btnCarrinho: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         val itemBatataFrita = findViewById<LinearLayout>(R.id.itemBatataFrita)
         val itemPaoDeQueijo = findViewById<LinearLayout>(R.id.itemPaoDeQueijo)
         val itemSuco = findViewById<LinearLayout>(R.id.itemSuco)
-        val btnCarrinho = findViewById<Button>(R.id.btnCarrinho)
+        btnCarrinho = findViewById(R.id.btnCarrinho)
 
         // Cada produto abre sua própria tela de opções e adicionais
         itemHotDog.setOnClickListener {
@@ -65,5 +68,12 @@ class MainActivity : AppCompatActivity() {
         btnCarrinho.setOnClickListener {
             startActivity(Intent(this, CarrinhoActivity::class.java))
         }
+    }
+
+    // O onResume roda toda vez que a tela aparece (também ao voltar de um produto),
+    // então o botão sempre mostra a quantidade de itens e o total atualizados
+    override fun onResume() {
+        super.onResume()
+        btnCarrinho.text = Carrinho.textoDoBotao()
     }
 }

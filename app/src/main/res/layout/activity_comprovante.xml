@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/fundo">
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -104,6 +103,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_local"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/tvPagamento"
+                    style="@style/Texto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_pagamento"
                     android:drawablePadding="8dp"
                     android:gravity="center_vertical" />
             </LinearLayout>
