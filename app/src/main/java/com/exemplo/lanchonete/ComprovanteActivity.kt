@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 
 class ComprovanteActivity : AppCompatActivity() {
@@ -44,12 +45,24 @@ class ComprovanteActivity : AppCompatActivity() {
         }
 
         btnNovoPedido.setOnClickListener {
-            // CLEAR_TOP volta para a tela de restaurantes que já está aberta e fecha
-            // as telas do pedido anterior, em vez de empilhar uma nova
-            val irParaInicio = Intent(this, RestaurantesActivity::class.java)
-            irParaInicio.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-            startActivity(irParaInicio)
-            finish()
+            voltarParaRestaurantes()
         }
+
+        // O botão "voltar" do celular faz o mesmo que "Fazer novo pedido".
+        // Sem isso ele voltaria para o carrinho, que já está vazio.
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                voltarParaRestaurantes()
+            }
+        })
+    }
+
+    private fun voltarParaRestaurantes() {
+        // CLEAR_TOP volta para a tela de restaurantes que já está aberta e fecha
+        // as telas do pedido anterior, em vez de empilhar uma nova
+        val irParaInicio = Intent(this, RestaurantesActivity::class.java)
+        irParaInicio.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+        startActivity(irParaInicio)
+        finish()
     }
 }

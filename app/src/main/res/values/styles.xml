@@ -111,6 +111,13 @@
         <item name="android:padding">16dp</item>
     </style>
 
+    <!-- Cartão que pode ser tocado (restaurantes e itens do cardápio) -->
+    <style name="Cartao.Clicavel">
+        <item name="android:background">@drawable/bg_cartao_clicavel</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
     <!-- Barra fixa de botões no rodapé -->
     <style name="BarraInferior">
         <item name="android:background">@drawable/bg_barra_inferior</item>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cartão branco que mostra o efeito de toque (ripple) ao ser pressionado.
+     Fica no fundo do cartão, então funciona em todas as versões do Android
+     que o app aceita (o android:foreground só funciona a partir do Android 6). -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/primaria_clara">
+    <item android:drawable="@drawable/bg_cartao" />
+</ripple>

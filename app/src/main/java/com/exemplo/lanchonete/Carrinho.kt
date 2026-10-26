@@ -21,7 +21,16 @@ object Carrinho {
 
     val itens = mutableListOf<ItemPedido>()
 
+    // Se já existe um item igual (mesma descrição e mesmo preço), só soma a
+    // quantidade, em vez de criar outra linha: "1x Coxinha" + "1x Coxinha" = "2x Coxinha"
     fun adicionar(item: ItemPedido) {
+        for (posicao in itens.indices) {
+            val existente = itens[posicao]
+            if (existente.descricao == item.descricao && existente.precoUnitario == item.precoUnitario) {
+                itens[posicao] = ItemPedido(item.descricao, existente.quantidade + item.quantidade, item.precoUnitario)
+                return
+            }
+        }
         itens.add(item)
     }
 

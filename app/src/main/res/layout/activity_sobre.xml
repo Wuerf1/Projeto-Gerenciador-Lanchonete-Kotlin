@@ -81,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:lineSpacingExtra="4dp"
-                    android:text="Os itens ficam guardados no objeto Carrinho, uma lista compartilhada entre todas as telas enquanto o app está aberto (não usa banco de dados). Ele é o mesmo para os três restaurantes, calcula o total e limpa o pedido no final. Os valores são formatados no padrão brasileiro, com vírgula. Os cardápios atualizam o botão do carrinho no onResume, que roda sempre que a tela volta a aparecer, mostrando quantos itens já foram escolhidos e o total. Na tela do carrinho, um AlertDialog lista os itens para remover um deles ou esvaziar tudo." />
+                    android:text="Os itens ficam guardados no objeto Carrinho, uma lista compartilhada entre todas as telas enquanto o app está aberto (não usa banco de dados). Ele é o mesmo para os três restaurantes, calcula o total e limpa o pedido no final. Os valores são formatados no padrão brasileiro, com vírgula. Os cardápios atualizam o botão do carrinho no onResume, que roda sempre que a tela volta a aparecer, mostrando quantos itens já foram escolhidos e o total. Na tela do carrinho, um AlertDialog lista os itens para remover um deles ou esvaziar tudo. Se o cliente adicionar um item igual a outro que já está no carrinho, o Carrinho só soma a quantidade, em vez de criar outra linha." />
 
                 <TextView
                     style="@style/Texto"
@@ -89,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:lineSpacingExtra="4dp"
-                    android:text="O nome, o endereço, a forma de pagamento (um RadioGroup) e o resumo dos itens seguem da tela de entrega para o comprovante com putExtra, e o código de 4 dígitos para receber o pedido é sorteado com Random. O carrinho é limpo na confirmação e a tela de entrega chama finish(), assim não dá para confirmar o mesmo pedido de novo apertando voltar." />
+                    android:text="O nome, o endereço, a forma de pagamento (um RadioGroup) e o resumo dos itens seguem da tela de entrega para o comprovante com putExtra, e o código de 4 dígitos para receber o pedido é sorteado com Random. O carrinho é limpo na confirmação e a tela de entrega chama finish(), assim não dá para confirmar o mesmo pedido de novo apertando voltar. No comprovante, o botão voltar do celular (OnBackPressedCallback) leva para a tela de restaurantes, igual ao Fazer novo pedido. Os campos de nome e endereço têm tamanho mínimo e máximo, e o teclado pula do nome para o endereço com o botão Próximo." />
 
                 <TextView
                     style="@style/Texto"

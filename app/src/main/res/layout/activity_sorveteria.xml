@@ -80,16 +80,13 @@
                 <!-- Casquinha -->
                 <LinearLayout
                     android:id="@+id/itemCasquinha"
-                    style="@style/Cartao"
+                    style="@style/Cartao.Clicavel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:padding="12dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="84dp"
@@ -138,16 +135,13 @@
                 <!-- Sundae -->
                 <LinearLayout
                     android:id="@+id/itemSundae"
-                    style="@style/Cartao"
+                    style="@style/Cartao.Clicavel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:padding="12dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="84dp"
@@ -196,16 +190,13 @@
                 <!-- Açaí (300 ml) -->
                 <LinearLayout
                     android:id="@+id/itemAcai"
-                    style="@style/Cartao"
+                    style="@style/Cartao.Clicavel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:padding="12dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="84dp"
@@ -254,16 +245,13 @@
                 <!-- Picolé -->
                 <LinearLayout
                     android:id="@+id/itemPicole"
-                    style="@style/Cartao"
+                    style="@style/Cartao.Clicavel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:padding="12dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="84dp"

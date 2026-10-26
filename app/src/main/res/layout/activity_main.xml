@@ -80,16 +80,13 @@
                 <!-- Hot Dog -->
                 <LinearLayout
                     android:id="@+id/itemHotDog"
-                    style="@style/Cartao"
+                    style="@style/Cartao.Clicavel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:padding="12dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="84dp"
@@ -138,16 +135,13 @@
                 <!-- X-Burguer -->
                 <LinearLayout
                     android:id="@+id/itemXBurguer"
-                    style="@style/Cartao"
+                    style="@style/Cartao.Clicavel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:padding="12dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="84dp"
@@ -196,16 +190,13 @@
                 <!-- Pizza (fatia) -->
                 <LinearLayout
                     android:id="@+id/itemPizza"
-                    style="@style/Cartao"
+                    style="@style/Cartao.Clicavel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:padding="12dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="84dp"
@@ -254,16 +245,13 @@
                 <!-- Refrigerante -->
                 <LinearLayout
                     android:id="@+id/itemRefrigerante"
-                    style="@style/Cartao"
+                    style="@style/Cartao.Clicavel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:padding="12dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="84dp"
@@ -312,16 +300,13 @@
                 <!-- Coxinha -->
                 <LinearLayout
                     android:id="@+id/itemCoxinha"
-                    style="@style/Cartao"
+                    style="@style/Cartao.Clicavel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:padding="12dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="84dp"
@@ -370,16 +355,13 @@
                 <!-- Pastel -->
                 <LinearLayout
                     android:id="@+id/itemPastel"
-                    style="@style/Cartao"
+                    style="@style/Cartao.Clicavel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:padding="12dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="84dp"
@@ -428,16 +410,13 @@
                 <!-- Batata Frita -->
                 <LinearLayout
                     android:id="@+id/itemBatataFrita"
-                    style="@style/Cartao"
+                    style="@style/Cartao.Clicavel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:padding="12dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="84dp"
@@ -486,16 +465,13 @@
                 <!-- Pão de Queijo -->
                 <LinearLayout
                     android:id="@+id/itemPaoDeQueijo"
-                    style="@style/Cartao"
+                    style="@style/Cartao.Clicavel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:padding="12dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="84dp"
@@ -544,16 +520,13 @@
                 <!-- Suco -->
                 <LinearLayout
                     android:id="@+id/itemSuco"
-                    style="@style/Cartao"
+                    style="@style/Cartao.Clicavel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:padding="12dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="84dp"

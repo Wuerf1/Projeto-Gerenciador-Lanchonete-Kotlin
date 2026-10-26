@@ -50,16 +50,13 @@
             <!-- Água na Boca -->
             <LinearLayout
                 android:id="@+id/cardLanchonete"
-                style="@style/Cartao"
+                style="@style/Cartao.Clicavel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="14dp"
                 android:padding="12dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?attr/selectableItemBackground">
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="80dp"
@@ -110,16 +107,13 @@
             <!-- Sorveteria Borcelle -->
             <LinearLayout
                 android:id="@+id/cardSorveteria"
-                style="@style/Cartao"
+                style="@style/Cartao.Clicavel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="14dp"
                 android:padding="12dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?attr/selectableItemBackground">
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="80dp"
@@ -170,16 +164,13 @@
             <!-- Borcelle Cafeteria -->
             <LinearLayout
                 android:id="@+id/cardCafeteria"
-                style="@style/Cartao"
+                style="@style/Cartao.Clicavel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="14dp"
                 android:padding="12dp"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?attr/selectableItemBackground">
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="80dp"

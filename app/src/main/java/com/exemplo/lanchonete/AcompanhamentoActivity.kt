@@ -27,6 +27,9 @@ class AcompanhamentoActivity : AppCompatActivity() {
     private val handler = Handler(Looper.getMainLooper())
     private var etapaAtual = 0
 
+    // Fica true enquanto a tela está na frente do usuário (entre onResume e onPause)
+    private var telaVisivel = false
+
     private lateinit var tvStatus: TextView
     private lateinit var progresso: ProgressBar
     private lateinit var linhasEtapas: List<TextView>
@@ -78,7 +81,9 @@ class AcompanhamentoActivity : AppCompatActivity() {
             mostrarEtapa()
             if (etapaAtual < etapas.size - 1) {
                 agendarProximaEtapa()
-            } else {
+            } else if (telaVisivel) {
+                // Só avisa se o cliente estiver olhando esta tela; se ele saiu do app,
+                // o aviso não aparece por cima de outro aplicativo
                 Toast.makeText(this, "Pedido entregue! Bom apetite!", Toast.LENGTH_LONG).show()
             }
         }, tempoEntreEtapas)
@@ -92,6 +97,16 @@ class AcompanhamentoActivity : AppCompatActivity() {
             val bolinha = if (i <= etapaAtual) "●" else "○"
             linhasEtapas[i].text = bolinha + "  " + etapas[i]
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        telaVisivel = true
+    }
+
+    override fun onPause() {
+        super.onPause()
+        telaVisivel = false
     }
 
     // Guarda a etapa antes de a tela ser recriada (por exemplo, ao girar o celular)

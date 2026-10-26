@@ -11,6 +11,11 @@ import kotlin.random.Random
 
 class DadosEntregaActivity : AppCompatActivity() {
 
+    // Tamanho mínimo de cada campo, para evitar um nome de 1 letra ou um endereço incompleto.
+    // (O tamanho máximo fica no layout, com android:maxLength.)
+    private val tamanhoMinimoNome = 3
+    private val tamanhoMinimoEndereco = 8
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dados_entrega)
@@ -32,15 +37,30 @@ class DadosEntregaActivity : AppCompatActivity() {
             val nome = etNome.text.toString().trim()
             val endereco = etEndereco.text.toString().trim()
 
+            // requestFocus() coloca o cursor no campo com problema, para o cliente corrigir na hora
             if (nome.isBlank()) {
                 etNome.error = "Informe seu nome"
+                etNome.requestFocus()
                 Toast.makeText(this, "Por favor, informe seu nome", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (nome.length < tamanhoMinimoNome) {
+                etNome.error = "O nome precisa ter pelo menos $tamanhoMinimoNome letras"
+                etNome.requestFocus()
                 return@setOnClickListener
             }
 
             if (endereco.isBlank()) {
                 etEndereco.error = "Informe o endereço"
+                etEndereco.requestFocus()
                 Toast.makeText(this, "Por favor, informe o endereço", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (endereco.length < tamanhoMinimoEndereco) {
+                etEndereco.error = "Informe o endereço completo: rua, número e bairro"
+                etEndereco.requestFocus()
                 return@setOnClickListener
             }
 
